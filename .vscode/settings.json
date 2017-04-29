@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "prettier": {
+        "singleQuote": true
+    },
+    "files.exclude": {
+        "src/*.css": true
+    }
+}

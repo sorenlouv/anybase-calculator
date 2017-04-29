@@ -1,0 +1,106 @@
+.App {
+  width: 100%;
+}
+
+section, div {
+  max-width: 100%;
+}
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-calculator {
+  .label {
+    color: #777;
+    font-size: 14px;
+  }
+
+  .inputs {
+    display: flex;
+    flex-wrap: wrap;
+
+    .input-wrapper {
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+
+    .input-wrapper input {
+      color: #000;
+      text-align: right;
+      padding: 5px 10px;
+      font-size: 26px;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      max-width: calc(100% - 10px);
+    }
+
+    input {
+      &:focus{
+        outline: none;
+        border-bottom: 1px solid #000;
+      }
+      &.invalid {
+        border-bottom: 1px solid #ff0000;
+      }
+    }
+
+    input.base {
+      width: 100px;
+    }
+  }
+
+  .result-container {
+    margin-bottom: 20px;
+    .value {
+      font-size: 40px
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .sections {
+    justify-content: center;
+  }
+
+  .section-examples {
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+  }
+}
+
+.section-examples {
+  min-width: 280px;
+  h2 {
+    margin: 0;
+  }
+  .description {
+    font-size: 13px;
+  }
+
+  .example {
+    h4 {
+      margin-bottom: 0;
+    }
+    ul {
+      margin: 0;
+
+      li {
+        font-family: monospace;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  margin: 20px;
+  color: #999;
+  font-size: 12px;
+}
