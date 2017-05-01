@@ -2,8 +2,14 @@ function isValid(expr) {
   return expr.match(/[^(\w\s+\-*/.())]/) === null;
 }
 
+function getNumberOfDecimals(value) {
+  return (value.split('.')[1] || []).length;
+}
+
 function parseFloatWithRadix(value, radix) {
-  return parseInt(value * 100000, radix) / Math.pow(radix, 5);
+  const decimalCount = getNumberOfDecimals(value);
+  const valueAsInteger = value.replace('.', '');
+  return parseInt(valueAsInteger, radix) / Math.pow(radix, decimalCount);
 }
 
 export const isBaseValid = base => base >= 2 && base <= 36;
@@ -23,15 +29,15 @@ export function calc(expr, base) {
 
   const exprInBase10 = expr
     .replace(/\s/g, '') // remove whitespace
-    .split(/([0-9.]+)/g) // split numbers and operators
+    .split(/([a-zA-Z0-9.]+)/g) // split numbers and operators
     .filter(number => number) // remove empty values
     .map(value => {
-      const isNumber = !isNaN(value);
-      if (isNumber) {
-        return parseFloatWithRadix(value, base);
+      const isOperator = ['+', '-', '*', '/'].includes(value);
+      if (isOperator) {
+        return value;
       }
 
-      return value;
+      return parseFloatWithRadix(value, base);
     });
 
   // yeah, I use eval

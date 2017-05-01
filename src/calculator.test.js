@@ -64,13 +64,18 @@ it('Base 16', () => {
   expect(calc('10 / 2', 16)).toBe('8');
   expect(calc('1 / 2', 16)).toBe('0.8');
 
-  expect(calc('0xa + 1', 16)).toBe('b');
-  expect(calc('0xa + 10', 16)).toBe('1a');
+  expect(calc('a + 1', 16)).toBe('b');
+  expect(calc('a - 1', 16)).toBe('9');
+  expect(calc('10 - 0.1', 16)).toBe('f.f');
+  expect(calc('a + 10', 16)).toBe('1a');
 
-  expect(calc('0xa * 10', 16)).toBe('a0');
-  expect(calc('0xa * 100', 16)).toBe('a00');
-  expect(calc('0xa * 0xa', 16)).toBe('64');
+  expect(calc('a * 10', 16)).toBe('a0');
+  expect(calc('a * 100', 16)).toBe('a00');
+  expect(calc('a * a', 16)).toBe('64');
 
-  expect(calc('0xd0 / 10', 16)).toBe('d');
-  expect(calc('0xd0 / 0xd', 16)).toBe('10');
+  expect(calc('d0 / 10', 16)).toBe('d');
+  expect(calc('d0 / d', 16)).toBe('10');
+
+  expect(calc('f.f - e.e', 16)).toBe('1.1');
+  expect(calc('a.1 * 2', 16)).toBe('14.2');
 });
