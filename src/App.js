@@ -6,7 +6,7 @@ import './App.css';
 const examples = {
   2: ['100 + 11', '111 - 10'],
   8: ['10 - 1', '5 + 5', '5 * 5'],
-  16: ['0xa + 1', '0xf - 0xa']
+  16: ['a * b', '1f - f']
 };
 
 class App extends Component {
