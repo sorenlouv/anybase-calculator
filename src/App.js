@@ -13,8 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      expr: '',
-      base: 10,
+      expr: 'a+b',
+      base: 16,
       isBaseValid: true,
       isExprValid: true
     };
@@ -82,10 +82,22 @@ class App extends Component {
               </div>
             </div>
 
-            <div className="result-container">
-              <div className="label">{result ? 'Result' : ''}</div>
-              <div className="value">{result}</div>
-            </div>
+            {result
+              ? <div className="result-container">
+                  <div className="label">Result</div>
+                  <div className="value">
+                    <span className="any-base">
+                      {result}
+                      <sub>{this.state.base}</sub>
+                    </span>
+
+                    <span className="decimal">
+                      = {parseInt(result, this.state.base)}
+                      <sub>10</sub>
+                    </span>
+                  </div>
+                </div>
+              : null}
           </section>
 
           <section className="section-examples">
