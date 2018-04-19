@@ -9,9 +9,14 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "gh-pages": "^1.1.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
+    "prettier": "^1.12.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -25,6 +30,6 @@
     "test": "react-scripts test --env=jsdom",
     "lint": "eslint ./src",
     "eject": "react-scripts eject",
-    "format": "prettier ./src/**/**/*.js --write --single-quote"
+    "format": "prettier \"./src/**/*.js\" --write"
   }
 }

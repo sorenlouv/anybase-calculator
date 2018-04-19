@@ -45,7 +45,7 @@ class App extends Component {
     let result;
     try {
       result = calc(this.state.expr, this.state.base);
-    } catch (e) {}
+    } catch (e) {} // eslint-disable-line no-empty
 
     return (
       <div className="App">

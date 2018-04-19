@@ -22,8 +22,14 @@ Run tests:
 npm test
 ```
 
-Deploy new version:
+Run linting and formatting:
 
 ```
-npm test
+npm run format && npm run lint
+```
+
+Deploy to GH Pages:
+
+```
+npm run build && npm run deploy
 ```
