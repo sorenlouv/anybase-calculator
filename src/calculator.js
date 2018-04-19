@@ -24,6 +24,7 @@ export const isExprValid = (expr, base) => {
 
 export function calc(expr, base) {
   debugger;
+  expr = expr.toLowerCase();
   if (!isValid(expr)) {
     throw new Error('Invalid expression: ' + expr);
   }
