@@ -82,22 +82,22 @@ class App extends Component {
               </div>
             </div>
 
-            {result
-              ? <div className="result-container">
-                  <div className="label">Result</div>
-                  <div className="value">
-                    <span className="any-base">
-                      {result}
-                      <sub>{this.state.base}</sub>
-                    </span>
+            {result ? (
+              <div className="result-container">
+                <div className="label">Result</div>
+                <div className="value">
+                  <span className="any-base">
+                    {result}
+                    <sub>{this.state.base}</sub>
+                  </span>
 
-                    <span className="decimal">
-                      = {parseInt(result, this.state.base)}
-                      <sub>10</sub>
-                    </span>
-                  </div>
+                  <span className="decimal">
+                    = {parseInt(result, this.state.base)}
+                    <sub>10</sub>
+                  </span>
                 </div>
-              : null}
+              </div>
+            ) : null}
           </section>
 
           <section className="section-examples">
@@ -123,11 +123,8 @@ class App extends Component {
           </section>
         </div>
         <div className="footer">
-          Created by
-          {' '}
-          <a href="https://twitter.com/sqrendk">Søren Louv-Jansen</a>
-          . Open-sourced on
-          {' '}
+          Created by <a href="https://twitter.com/sqrendk">Søren Louv-Jansen</a>
+          . Open-sourced on{' '}
           <a href="https://github.com/sqren/anybase-calculator">Github</a>
         </div>
       </div>

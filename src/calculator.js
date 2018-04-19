@@ -23,7 +23,6 @@ export const isExprValid = (expr, base) => {
 };
 
 export function calc(expr, base) {
-  
   expr = expr.toLowerCase();
   if (!isValid(expr)) {
     throw new Error('Invalid expression: ' + expr);
@@ -34,7 +33,7 @@ export function calc(expr, base) {
     .split(/([a-zA-Z0-9.]+)/g) // split numbers and operators
     .filter(number => number) // remove empty values
     .map(value => {
-      const isNumber = /[0-9a-z]+/.test(value)
+      const isNumber = /[0-9a-z]+/.test(value);
       if (!isNumber) {
         return value;
       }
